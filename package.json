@@ -3,9 +3,7 @@
     "name": "startbootstrap-scrolling-nav",
     "version": "4.2.2",
     "main": "index.html",
-    "scripts": {
-        
-    },
+    "scripts": {},
     "description": "A smooth scrolling navigation HTML template built with Bootstrap",
     "keywords": [
         "css",
@@ -31,6 +29,7 @@
     },
     "dependencies": {
         "bootstrap": "4.5.0",
+        "express": "^4.17.1",
         "jquery": "3.5.1",
         "jquery.easing": "^1.4.1"
     },
