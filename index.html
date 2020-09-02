@@ -8,6 +8,20 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+    #map {
+      height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+
   <title>Scrolling Nav - Start Bootstrap Template</title>
 
   <!-- Bootstrap core CSS -->
@@ -15,6 +29,8 @@
 
   <!-- Custom styles for this template -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
+
+ 
 
 </head>
 
@@ -84,6 +100,56 @@
         <div class="col-lg-8 mx-auto">
           <h2>Contact us</h2>
           <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="maps">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 style="text-align: center;">Coordenada</h2>
+          <div id="map" width="800" height="900" style="border:0"></div>
+          <iframe width=800px height=500px frameborder=0px></iframe> 
+          <script>
+            function initMap() {
+              var myLatlng = {lat: -12.736694907261837, lng: -38.16154205797099};
+
+              var map = new google.maps.Map(
+                  document.getElementById('map'), {zoom: 5, center: myLatlng});
+
+              // Create the initial InfoWindow.
+              var infoWindow = new google.maps.InfoWindow(
+                  {content: 'Click the map to get Lat/Lng!', position: myLatlng});
+              infoWindow.open(map);
+
+              // Configure the click listener.
+              map.addListener('click', function(mapsMouseEvent) {
+                // Close the current InfoWindow.
+                infoWindow.close();
+
+                // Create a new InfoWindow.
+                infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
+                infoWindow.setContent(mapsMouseEvent.latLng.toString());
+                infoWindow.open(map);
+              });
+            }
+          </script>
+          <defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC97oj_73Oab6zrUkHfWH-gq7zF2omHkOo&callback=initMap">
+          </defer>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="avaliacao" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 style="text-align: center;">Avaliação Experimental</h2>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdEQ6H_0oK5UNhcfK194FADq836g4uGHp7h2YRv-Mn29ZKxsQ/viewform?embedded=true" width="640" height="5359" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
         </div>
       </div>
     </div>
