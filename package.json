@@ -2,8 +2,9 @@
     "title": "Scrolling Nav",
     "name": "startbootstrap-scrolling-nav",
     "version": "4.2.2",
+    "main": "index.html",
     "scripts": {
-        "start": "node_modules/.bin/gulp watch"
+        
     },
     "description": "A smooth scrolling navigation HTML template built with Bootstrap",
     "keywords": [
